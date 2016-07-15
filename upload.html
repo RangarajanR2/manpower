@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New member</title>
+</head>
+<body bgcolor="beige">
+
+<div align="center">
+<h2> Add New Member</h2>
+<form method="post" action="http://localhost:8081/postdata">
+<table>
+	<tr>
+		<td>Name<br/><br/></td>
+		<td>:<br/><br/></td>
+		<td><input type="text" placeholder="Employee name" name="name" required="true"><br/><br/></td>
+	</tr>
+	<tr>
+		<td>Profession<br/><br/></td>
+		<td>:<br/><br/></td>
+		<td><input type="text" placeholder="Carpenter/plumber..." name="prf" required="true"><br/><br/></td>
+	</tr>
+	<tr>
+		<td>City<br/><br/></td>
+		<td>:<br/><br/></td>
+		<td><input type="text" placeholder="Chennai/Bangalore/Hyderabad..." name="city" required="true"><br/><br/></td>
+	</tr>
+	<tr>
+		<td>Phone Num<br/><br/></td>
+		<td>:<br/><br/></td>
+		<td><input type="text" placeholder="0123456789" name="ph" required="true"><br/><br/></td>
+	</tr>
+	<tr>
+		<td>Status<br/><br/></td>
+		<td>:<br/><br/></td>
+		<td> <select>
+  <option value="Free">Free</option>
+  <option value="Engaged">Engaged</option>
+  
+</select> <br/><br/></td>
+	</tr>
+</table>
+	<!-- Name : <input type="text" placeholder="Employee name" name="name" required="true"><br/><br/>
+	Profession : <input type="text" placeholder="Carpenter/plumber..." name="prf" required="true"><br/><br/>
+	City : <input type="text" placeholder="Chennai/Bangalore/Hyderabad..." name="city" required="true"><br/><br/>
+	Phone Num : <input type="text" placeholder="0123456789" name="ph" required="true"><br/><br/>
+	Status : <input type="text" placeholder="Free/Engaged..." name="status"><br/><br/>	 -->
+	<input type="submit" value="Add" name="submit">
+</form>
+	
+</div>
+</body>
+</html>

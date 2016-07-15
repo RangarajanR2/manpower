@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testing ajax</title>
+</head>
+<body>
+<button onclick="hello()">click me</button>
+<script type="text/javascript">
+	function hello() {
+			console.log("started");
+			var xhr = new XMLHttpRequest();
+			console.log("xhr created");
+			var data = {"name":"hello","profession":"carpenter","city":"tuticorin","ph":"134567876543","status":"engaged"};
+			console.log("date="+JSON.stringify(data));
+			xhr.onreadystatechange = function(){
+				if((xhr.readyState==4)&&(xhr.status == 200 || xhr.status==304)){
+					alert('check');
+					/*var data = JSON.parse(xhr.responseText);
+					console.log((data))*/;
+					/*for(var i=0;i<data.length;i++){
+						alert(data[i].name);
+					}*/
+					/*alert(JSON.parse(xhr.responseText)["1"].name);
+					*//*var body = document.getElementsByTagName('body')[0];
+					var p = document.createElement("p");
+					var pText = document.createTextNode(xhr.responseText);
+					p.appendChild(pText);
+					body.appendChild(p);*/
+				}
+			}
+			console.log('postin');
+			xhr.open("post","localhost:8081/postdata");
+			console.log("opende");
+			xhr.setRequestHeader("X-Requested-With","XMLHttpRequest");
+			xhr.setRequestHeader("Content-Type",'application/x-www-form-urlencoded');
+			xhr.send(JSON.stringify(data));	
+	}
+</script>
+
+</body>
+</html>

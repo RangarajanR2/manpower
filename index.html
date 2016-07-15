@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-ng-app="customersApp">
+<head>
+	<title>Angular project</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body  > 
+<div align="center" data-ng-controller = "simpleControl">  
+	Filter:	<input type="text" data-ng-model="filterText" /> 
+	Show Only:<input type="number" data-ng-model="limit">
+	<br/><br/> 
+
+	<button ng-click=edit() ng-show=setShow> Edit </button> 
+	<button ng-click=delete() ng-show=setShow>Delete</button>
+	<!-- <div id='edit'></div>
+	<div id='delete'></div> -->
+	<table width="70%" >
+		<th> Select</th>
+		<th  ng-click=doSort('name')>Name</th>
+		<th  ng-click=doSort('profession')>Profession</th>
+		<th  ng-click=doSort('city')>City</th>
+		<th  ng-click=doSort('ph')> Phone Number</th>
+		<th >Status</th>
+		<!-- <th></th> -->
+		<tr data-ng-repeat="cust in customers |filter:filterText |limitTo:(limit)| orderBy:order:reverse">
+			<td align="center"><input type="checkbox" ng-click="showButtons(this)"  id={{cust.uniqID}} name = "cust.uniqID" ></td>
+			<td ng-dblclick=editArray(cust.uniqID,'name')>{{cust.name}}</td>
+			<td ng-dblclick=editArray(cust.uniqID,'profession')>{{cust.profession}}</td>
+			<td ng-dblclick=editArray(cust.uniqID,'city')>{{cust.city}}</td>
+			<td ng-dblclick=editArray(cust.uniqID,'ph')>{{cust.ph}}</td>
+			<td ng-dblclick=editArray(cust.uniqID,'currentStatus')>{{cust.currentStatus}}</td>
+			<!-- <td><button ng-click=del(this) name="btn" id="{{cust.uniqID}}">Delete</button></td> -->
+		</tr>
+	</table>
+	<br/><br/>
+	<button onclick="self.location.href='/upload.html'">Add new</button>
+
+</div>
+
+<script  src="angular.min.js"></script>
+
+<script src="app.js"></script>
+
+<script src="controllers\customerControl.js"></script>
+</body>
+</html>

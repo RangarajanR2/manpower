@@ -7,9 +7,10 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0"
   },
-  "author": "",
+  "author": "Rangarajan",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -19,5 +20,6 @@
     "url": "https://github.com/RangarajanR2/manpower/issues"
   },
   "homepage": "https://github.com/RangarajanR2/manpower#readme",
+  "devDependencies": {},
   "description": ""
 }
